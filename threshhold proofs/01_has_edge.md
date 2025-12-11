@@ -24,8 +24,8 @@ if $p \gg \frac{1}{n^2}$ then P(has edge) $\to 1$
 because edges are independent, the variance is just
 n choose 2 * p(1 - p)
 
-substitute $p = c *\frac{ln(n)}{n^2}$
-so $E(X) \approx \frac{c*ln(n)}{2}$
+Substitute $p = c \cdot \frac{\ln n}{n^2}$ so  
+$E(X) \approx \frac{c \cdot \ln n}{2}.$
 now we plug this into the Chebyshev ratio.
 
 $\frac{Var(X)}{E(X)^2} = \frac{n(n - 1)p(1-p)/2}{[n(n - 1)p/2]^2}$
