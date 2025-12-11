@@ -124,7 +124,7 @@ I wrote methods to test each property on random graphs:
 - `hasK3()` - O(n³) brute force over all triplets
 - `isConnected()` - O(n+m) DFS
 - `hasK4()` - O(n⁴) brute force over all 4-tuples
-- `isHamiltonian()` - O(n!) backtracking (pain)
+- `isHamiltonian()` - O(n!) backtracking
 
 For each (n, p) pair, I ran 500 trials and recorded what fraction of graphs had each property. The probability p ranged from 0 to 1 in steps of 0.02.
 
