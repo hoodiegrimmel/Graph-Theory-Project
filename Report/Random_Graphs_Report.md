@@ -2,7 +2,7 @@
 
 ## Introduction
 
-So the whole point of this project is to mess around with random graphs and see if we can observe those "threshold effects" we talked about in class. The idea is pretty simple - generate a bunch of random graphs G(n,p), test some properties, and see if things suddenly start happening at certain values of p. Spoiler alert: they do, and it's actually pretty cool.
+So the whole point of this project is to mess around with random graphs and see if we can observe those "threshold effects" we talked about in class. The idea is pretty simple - generate a bunch of random graphs G(n,p), test some properties, and see if things suddenly start happening at certain values of p.
 
 I went with this project because I have some coding experience and honestly the probabilistic stuff seemed more interesting than grinding through Ramsey number calculations by hand.
 
