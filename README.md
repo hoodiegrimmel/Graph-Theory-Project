@@ -16,6 +16,6 @@ Where we compare the theoretical threshold against the experimental results.
 
 ### Code
 
-Experimental code you can run on your own device, detailed instructions are included in the readme.md.
+Experimental code you can run on your own device, detailed instructions are included in the folder.
 
 
