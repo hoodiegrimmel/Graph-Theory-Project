@@ -16,6 +16,8 @@ This one's kind of trivial but we gotta start somewhere. The expected number of 
 
 **Naive constant:** $c = 2$
 
+![Has Edge Plot](images/has_edge.PNG)
+
 **Experimental Results:**
 
 Looking at the plots, the transition is insanely sharp for large n. For n = 500, the graph almost surely has an edge even at p = 0.02, which is way above the theoretical threshold of p* ≈ 0.000008. Basically once you have enough vertices, you need an absurdly small p to avoid having any edges at all. Makes sense if you think about it - with 500 vertices you have like 125,000 potential edges so even a tiny probability adds up.
@@ -30,6 +32,8 @@ The expected number of triangles is $\binom{n}{3} \cdot p^3 \approx \frac{n^3 p^
 
 **Naive constant:** $c \approx 1.82$
 
+![Has Triangle Plot](images/has_triangle.PNG)
+
 **Experimental Results:**
 
 The experimental 50% crossing point happens at around p ≈ 2/n, which is pretty close to the theoretical prediction. The curves get steeper as n increases which is exactly what we'd expect from the theory. Triangles are the smallest non-trivial subgraph so they're kind of the "hello world" of subgraph thresholds.
@@ -43,6 +47,8 @@ The experimental 50% crossing point happens at around p ≈ 2/n, which is pretty
 This is the famous Erdős-Rényi result. The idea is that connectivity is basically determined by isolated vertices. The expected number of isolated vertices is $n(1-p)^{n-1} \approx n \cdot e^{-pn}$. Setting p = ln(n)/n makes this expectation go to 0 for λ > 1 and go to infinity for λ < 1.
 
 **Naive constant:** $c = 1$
+
+![is connected Plot](images/is_connected.PNG)
 
 **Experimental Results:**
 
@@ -60,6 +66,8 @@ The expected number of K₄ subgraphs is $\binom{n}{4} \cdot p^6 \approx \frac{n
 
 **Naive constant:** $c \approx 1.70$
 
+![has K4 Plot](images/has_k4.PNG)
+
 **Experimental Results:**
 
 The transitions happen at around 1.7-1.9 times the theoretical threshold which is consistent with our naive estimate. The curves get steeper for larger n as expected. K₄ detection is O(n⁴) so I could only test up to n = 100 before my laptop started making concerning noises.
@@ -70,7 +78,9 @@ The transitions happen at around 1.7-1.9 times the theoretical threshold which i
 
 **Theoretical Threshold:** $p^* = \frac{\ln(n)}{n}$ (same order as connectivity)
 
-This one's interesting because it has the same threshold as connectivity. The intuition is that once a graph is "robustly" connected (no isolated or degree-1 vertices), Hamilton cycles appear almost surely. Komlós and Szemerédi proved this in 1983.
+This one's interesting because it has the same threshold as connectivity. The intuition is that once a graph is "densely" connected (no isolated or degree-1 vertices), Hamilton cycles appear almost surely. 
+
+![is connecPlot](images/has_hamiltonian.PNG)
 
 **Naive constant:** $c = 1$
 
@@ -92,10 +102,6 @@ Another interesting observation is the hierarchy of thresholds. As we increase p
 3. Then it becomes connected (p* ~ ln(n)/n)
 4. Around the same time, Hamilton cycles become likely
 5. Finally K₄ subgraphs appear (p* ~ n^(-2/3)) at moderate n
-
-It's like watching a graph grow up. First it gets its first connection, then it starts forming friend groups (triangles), then the whole social network becomes connected, and eventually you get these tightly-knit cliques forming.
-
-The Hamilton cycle threshold being the same as connectivity is kind of poetic - once everyone's connected, you can visit everyone exactly once and come back home. Very wholesome graph theory content.
 
 ---
 
@@ -157,8 +163,8 @@ Another challenge was implementing hasK3 and hasK4. With an adjacency matrix you
 
 ## Conclusion
 
-Random graphs really do exhibit these sharp phase transitions where properties go from "almost never" to "almost always" over a narrow range of p. The experimental results line up pretty well with the theoretical predictions, especially for larger n where the asymptotic behavior kicks in.
+Random graphs really do exhibit these sharp phase transitions where properties go from "almost never" to "almost always" over a narrow range of p. The experimental results line up pretty well with the theoretical predictions, especially for larger n.
 
-The coolest part is how the thresholds form this hierarchy - edges first, then triangles, then connectivity, then bigger cliques.
+I think the most interesting part for me was the hierarchy it formed - edges first, then triangles, then connectivity, then k4.
 
-If I had more time (and a better computer), I'd test larger values of n for the Hamilton cycle property. But that would require some smarter people.
+If I had more time (and a better computer), I'd test larger values of n for the Hamilton cycle property. But that would require some smarter algorithms and people.
