@@ -130,7 +130,7 @@ Used matplotlib to generate the plots. Nothing fancy, just plotting probability 
 
 - `hasK3`: practical for n ≤ 1000 (billion operations territory)
 - `hasK4`: practical for n ≤ 200 (n⁴ gets ugly fast)
-- `isHamiltonian`: practical for n ≤ 20 (NP-complete problems hit different)
+- `isHamiltonian`: practical for n ≤ 20 (NP-complete problem)
 - `isConnected`: could handle n ≤ 100,000 easily
 
 ### Challenges
