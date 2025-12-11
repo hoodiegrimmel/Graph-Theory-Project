@@ -36,7 +36,7 @@ The expected number of triangles is $\binom{n}{3} \cdot p^3 \approx \frac{n^3 p^
 
 **Experimental Results:**
 
-The experimental 50% crossing point happens at around p ≈ 2/n, which is pretty close to the theoretical prediction. The curves get steeper as n increases which is exactly what we'd expect from the theory. Triangles are the smallest non-trivial subgraph so they're kind of the "hello world" of subgraph thresholds.
+The experimental 50% crossing point happens at around p ≈ 2/n, which is pretty close to the theoretical prediction. The curves get steeper as n increases which is exactly what we'd expect from the theory.
 
 ---
 
@@ -54,7 +54,7 @@ This is the famous Erdős-Rényi result. The idea is that connectivity is basica
 
 The experimental data lines up pretty well with theory. For n = 200, the theoretical threshold is p* ≈ 0.0265 and we see the transition happening around p ≈ 0.04. The ratio is about 1.2-1.5x which makes sense because the theoretical threshold is asymptotic (n → ∞) and we're working with finite graphs.
 
-The connectivity threshold is honestly the most satisfying one because the math is so clean. Below the threshold you almost surely have lonely vertices floating around with no friends. Above the threshold everyone's connected. Very wholesome.
+The connectivity threshold is honestly the most satisfying one because the math is so clean. Below the threshold you almost surely have isolated vertices. Above the threshold everyone's connected.
 
 ---
 
@@ -70,7 +70,7 @@ The expected number of K₄ subgraphs is $\binom{n}{4} \cdot p^6 \approx \frac{n
 
 **Experimental Results:**
 
-The transitions happen at around 1.7-1.9 times the theoretical threshold which is consistent with our naive estimate. The curves get steeper for larger n as expected. K₄ detection is O(n⁴) so I could only test up to n = 100 before my laptop started making concerning noises.
+The transitions happen at around 1.7-1.9 times the theoretical threshold which is consistent with our naive estimate. The curves get steeper for larger n as expected. K₄ detection is O(n⁴) so I could only test up to n = 100.
 
 ---
 
@@ -86,7 +86,7 @@ This one's interesting because it has the same threshold as connectivity. The in
 
 **Experimental Results:**
 
-I could only test small values of n (up to 15) because checking for Hamilton cycles is NP-complete and the backtracking algorithm is O(n!) in the worst case. My computer would probably catch fire if I tried n = 50.
+I could only test small values of n (up to 15) because checking for Hamilton cycles is NP-complete and the backtracking algorithm is O(n!) in the worst case. My computer would probably crash if I tried n = 50.
 
 Even at these small sizes, we can see the S-shaped transition curves forming. The experimental thresholds are higher than ln(n)/n but that's expected for small n - the asymptotic behavior kicks in for larger graphs.
 
@@ -126,7 +126,7 @@ I wrote methods to test each property on random graphs:
 - `hasK4()` - O(n⁴) brute force over all 4-tuples
 - `isHamiltonian()` - O(n!) backtracking (pain)
 
-For each (n, p) pair, I ran 500 Monte Carlo trials and recorded what fraction of graphs had each property. The probability p ranged from 0 to 1 in steps of 0.02.
+For each (n, p) pair, I ran 500 trials and recorded what fraction of graphs had each property. The probability p ranged from 0 to 1 in steps of 0.02.
 
 ### Python Side
 
@@ -163,7 +163,7 @@ Another challenge was implementing hasK3 and hasK4. With an adjacency matrix you
 
 ## Conclusion
 
-Random graphs really do exhibit these sharp phase transitions where properties go from "almost never" to "almost always" over a narrow range of p. The experimental results line up pretty well with the theoretical predictions, especially for larger n.
+Random graphs do have these sharp phase transitions where properties go from "almost never" to "almost always" over a narrow range of p. The experimental results line up pretty well with the theoretical predictions, especially for larger n.
 
 I think the most interesting part for me was the hierarchy it formed - edges first, then triangles, then connectivity, then k4.
 
