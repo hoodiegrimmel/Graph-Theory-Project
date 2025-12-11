@@ -157,8 +157,8 @@ Another challenge was implementing hasK3 and hasK4. With an adjacency matrix you
 
 ## Conclusion
 
-The threshold effect is real and it's spectacular. Random graphs really do exhibit these sharp phase transitions where properties go from "almost never" to "almost always" over a narrow range of p. The experimental results line up pretty well with the theoretical predictions, especially for larger n where the asymptotic behavior kicks in.
+Random graphs really do exhibit these sharp phase transitions where properties go from "almost never" to "almost always" over a narrow range of p. The experimental results line up pretty well with the theoretical predictions, especially for larger n where the asymptotic behavior kicks in.
 
-The coolest part is how the thresholds form this hierarchy - edges first, then triangles, then connectivity, then bigger cliques. It's like watching order emerge from randomness, which is basically what Erdős and Rényi figured out back in 1959. Pretty cool that we can verify their theorems with some C++ and matplotlib.
+The coolest part is how the thresholds form this hierarchy - edges first, then triangles, then connectivity, then bigger cliques.
 
-If I had more time (and a better computer), I'd test larger values of n for the Hamilton cycle property. But that would require either a smarter algorithm or accepting that my laptop might become a space heater.
+If I had more time (and a better computer), I'd test larger values of n for the Hamilton cycle property. But that would require some smarter people.
