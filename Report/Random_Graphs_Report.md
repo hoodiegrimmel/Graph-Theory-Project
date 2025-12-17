@@ -11,8 +11,7 @@ I went with this project because I have some coding experience and honestly the 
 ## Property 1: Has an Edge
 
 **Theoretical Threshold:** $p^* = \frac{2}{n^2}$
-
-This one's kind of trivial but we gotta start somewhere. The expected number of edges is $\binom{n}{2} \cdot p \approx \frac{n^2 p}{2}$. Setting this equal to 1 gives us $p^* = \frac{2}{n^2}$.
+The expected number of edges is $\binom{n}{2} \cdot p \approx \frac{n^2 p}{2}$. Setting this equal to 1 gives us $p^* = \frac{2}{n^2}$.
 
 **Naive constant:** $c = 2$
 
